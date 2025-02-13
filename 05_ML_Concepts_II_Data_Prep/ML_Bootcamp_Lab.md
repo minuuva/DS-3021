@@ -24,5 +24,3 @@ Step two: Work through the steps outlined in the examples to include the followi
   * Create the necessary data partitions (Train,Tune,Test)
   
 Step three: What do your instincts tell you about the data. Can it address your problem, what areas/items are you worried about? 
-
-

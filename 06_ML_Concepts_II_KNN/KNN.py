@@ -20,7 +20,7 @@ from sklearn import metrics
 # -------- Data prep --------
 # Based on the following data summary, what questions and business metric should we use? 
 
-bank_data = pd.read_csv("https://raw.githubusercontent.com/UVADS/DS-3001/main/data/bank.csv")
+bank_data = pd.read_csv("bank.csv")
 print(bank_data.info())
 
 #%%

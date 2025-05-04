@@ -17,8 +17,8 @@ os.listdir()
 os.chdir('c:\\Users\\Brian Wright\\Documents\\3001Python\\DS-3001')
 #%%
 # Load Data
-house_votes_Dem = pd.read_csv("data/house_votes_Dem.csv", encoding='latin')
-house_votes_Rep = pd.read_csv("data/house_votes_Rep.csv")
+house_votes_Dem = pd.read_csv("house_votes_Dem.csv", encoding='latin')
+house_votes_Rep = pd.read_csv("house_votes_Rep.csv")
 #%%
 #Let's take a look at the data
 print(house_votes_Dem.head())
@@ -31,7 +31,7 @@ house_votes_Dem.groupby("party.labels").agg({"aye": "sum", "nay": "sum", "other"
 #%%
 # Step 2: run k-means
 clust_data_Dem = house_votes_Dem[["aye", "nay", "other"]]
-kmeans_obj_Dem = KMeans(n_clusters=2, random_state=1).fit(clust_data_Dem)
+kmeans_obj_Dem = KMeans(n_clusters=3, random_state=1).fit(clust_data_Dem)
 
 #%%
 #Take a look at the clustering results
@@ -126,7 +126,7 @@ fig
 
 #%%
 # Decision Tree model using clusters
-kmeans_obj_Dem = KMeans(n_clusters=3, algorithm="auto", random_state=1).fit(clust_data_Dem)
+kmeans_obj_Dem = KMeans(n_clusters=3, algorithm="lloyd", random_state=1).fit(clust_data_Dem)
 house_votes_Dem['clusters'] = kmeans_obj_Dem.labels_
 
 tree_data = house_votes_Dem.drop(columns=["Last.Name"])
